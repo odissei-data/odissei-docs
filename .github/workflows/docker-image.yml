@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+        docker build . -t thomasve/odissei-docs:latest
+        docker build . -t thomasve/odissei-docs:$GITHUB_SHA
+        docker login -u ${{ secrets.DOCKERHUB_USER }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
+        docker push thomasve/odissei-docs:latest
+        docker push thomasve/odissei-docs:$GITHUB_SHA

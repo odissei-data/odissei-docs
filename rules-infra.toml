@@ -1,0 +1,20 @@
+[http.routers]
+   # Define a connection between requests and services
+  [http.routers.docs]
+     rule = "Host(`docs.testdans.nl`)"
+     entrypoints = ["websecure"]
+     service = "docs"
+     middlewares = ["whitelistDans"]
+  [http.routers.docs.tls]
+     certResolver = "myresolver"
+
+[http.middlewares]
+  [http.middlewares.whitelistDans.ipWhiteList]
+    sourceRange = ["10.7.8.0/24","10.169.0.0/16","194.171.144.0/24","10.254.4.0/24","10.20.35.0/24","82.75.87.129/32","92.69.229.151/32","185.57.96.50/32","82.75.120.16/32","82.95.146.80/32","213.127.91.13/32"
+]
+
+[http.services]
+  # Define how to reach an existing service on our infrastructure
+  [http.services.docs.loadBalancer]
+    [[http.services.docs.loadBalancer.servers]]
+        url = "http://0.0.0.0:4040"

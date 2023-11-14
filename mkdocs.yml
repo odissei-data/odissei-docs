@@ -1,0 +1,39 @@
+site_name: Documentation
+nav:
+    - Home: index.md
+    - 'Local development':
+      - "Repo's and tools": dev/repo.md
+      - 'ODISSEI Stack': dev/stack.md
+      - 'Ingestion tools': dev/ingest.md
+      - 'Getting your first ingestion working': dev/first.md
+    - 'ODISSEI Stack':
+      - 'Introduction': stack/intro.md
+      - 'Architecture': stack/architecture.md
+      - 'Setting up': stack/setup.md
+    - 'Skosmos':
+      - 'Introduction': skosmos/intro.md
+      - 'Setting up': skosmos/setup.md
+      - 'Loading CV data': skosmos/loading.md
+    - 'Workflow ingestion & sidecars':
+      - 'Introduction': ingest/intro.md
+      - 'List of containers':
+          - 'Provenance tracking': ingest/tracking.md
+      - 'Workflow orchestrator': ingest/orchestrator.md
+      - 'Running an ingest': ingest/ingest.md
+    - 'Deployment':
+      - 'Introduction': deployment/intro.md
+      - 'Recommended resources and setup': deployment/recommended.md
+      - 'Traefik reverse proxy': deployment/proxy.md
+    - 'Debugging & troubleshooting':
+      - 'ODISSEI Stack': debug/stack.md
+      - 'SKOSMOS': debug/skosmos.md
+      - 'Orchestrator': debug/orchestrator.md
+      - 'Sidecars': debug/sidecars.md
+theme:
+  name: material
+  features:
+    - navigation.instant
+  palette:
+    scheme: slate
+plugins:
+  - search
