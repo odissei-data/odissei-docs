@@ -7,8 +7,7 @@ nav:
       - 'Ingestion tools': dev/ingest.md
       - 'Getting your first ingestion working': dev/first.md
     - 'ODISSEI Stack':
-      - 'Introduction': stack/intro.md
-      - 'Architecture': stack/architecture.md
+      - 'Architecture': stack/intro.md
       - 'Setting up': stack/setup.md
     - 'Skosmos':
       - 'Introduction': skosmos/intro.md
@@ -18,7 +17,14 @@ nav:
       - 'Introduction': ingest/intro.md
       - 'List of containers':
           - 'Provenance tracking': ingest/tracking.md
-      - 'Workflow orchestrator': ingest/orchestrator.md
+          - 'Metadata fetcher': ingest/fetcher.md
+          - 'Dataverse mapper': ingest/mapper.md
+          - 'Transformer': ingest/transformer.md
+          - 'Minter': ingest/minter.md
+          - 'Emailsanitizer': ingest/emailsanitizer.md
+          - 'Orchestrator': ingest/prefect.md
+          - 'Semantic enrichment': ingest/semantic.md
+          - 'Minio': ingest/minio.md
       - 'Running an ingest': ingest/ingest.md
     - 'Deployment':
       - 'Introduction': deployment/intro.md
