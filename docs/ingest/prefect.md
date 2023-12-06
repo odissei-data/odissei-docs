@@ -12,7 +12,14 @@ Prefect is the software which controls the runs of flows and is responsible for 
 
 ### Supervisord
 
-Supervisor is used to maintain several processses; this is what we mean with a server and agent process to perform tasks. Technically this gives us scaling room, since agents may live (technically) on a different machine, or alternatively on a cloud.
+Supervisor is used to maintain several processses; this is what we mean with a server and agent process to perform tasks. Technically this gives us scaling room, since agents may live (technically) on a different machine, or alternatively on a cloud. 
+While this is kind of an anti-pattern with Docker, it solves two problems in this case:
+
+- Running a properly configured Agent to consume tasks
+- Running a server which is properly configured
+- Not having to run a prefect instance as either `privileged` container or as root to scale Docker agents.
+
+These could still be done as a scale up; but this is the most secure and least invasive solution for now.
 
 ## Concepts
 
